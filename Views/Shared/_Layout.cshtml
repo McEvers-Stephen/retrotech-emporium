@@ -2,37 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Retrotech Emporium</title>
     <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/RetrotechEmporium.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="/css/site.css" />
+
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RetrotechEmporium</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
-                        </li>
-                    </ul>
-                </div>
+
+    <body class="bg-gray-950 text-white">
+        
+    <h1 style="color:red;">LAYOUT IS LOADING</h1>
+    <header class="bg-gray-900 text-white border-b border-cyan-500/30">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="/" class="text-2xl font-bold tracking-wide text-cyan-400 hover:text-cyan-300">
+                RetroTech Emporium
+            </a>
+
+            <!-- Nav -->
+            <nav class="flex gap-6 text-sm uppercase tracking-widest">
+
+                <a href="/" class="hover:text-cyan-400 transition">
+                    Home
+                </a>
+
+                <a href="/Products" class="hover:text-cyan-400 transition">
+                    Products
+                </a>
+
+                <a href="/Home/CompareEras" class="hover:text-cyan-400 transition">
+                    Compare Eras
+                </a>
+
+                <a href="/Home/About" class="hover:text-cyan-400 transition">
+                    About
+                </a>
+
+            </nav>
+
+            <!-- Right side (future cart/user area) -->
+            <div class="text-xs text-gray-400">
+                Beta Build
             </div>
-        </nav>
+
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">

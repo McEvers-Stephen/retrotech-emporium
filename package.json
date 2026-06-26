@@ -1,0 +1,26 @@
+{
+  "name": "retrotechemporium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McEvers-Stephen/retrotech-emporium.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/McEvers-Stephen/retrotech-emporium/issues"
+  },
+  "homepage": "https://github.com/McEvers-Stephen/retrotech-emporium#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.5.2",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.1"
+  }
+}
