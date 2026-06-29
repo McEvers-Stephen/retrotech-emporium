@@ -7,48 +7,48 @@
     <title>@ViewData["Title"] - Retrotech Emporium</title>
     <script type="importmap"></script>
 
-    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
 </head>
 
     <body class="bg-gray-950 text-white">
-        
-    <h1 style="color:red;">LAYOUT IS LOADING</h1>
-    <header class="bg-gray-900 text-white border-b border-cyan-500/30">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-            <!-- Logo -->
-            <a href="/" class="text-2xl font-bold tracking-wide text-cyan-400 hover:text-cyan-300">
-                RetroTech Emporium
-            </a>
-
-            <!-- Nav -->
-            <nav class="flex gap-6 text-sm uppercase tracking-widest">
-
-                <a href="/" class="hover:text-cyan-400 transition">
-                    Home
+    <header class="retro-header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand retro-logo" asp-controller="Home" asp-action="Index">
+                    RetroTech Emporium
                 </a>
 
-                <a href="/Products" class="hover:text-cyan-400 transition">
-                    Products
-                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                <a href="/Home/CompareEras" class="hover:text-cyan-400 transition">
-                    Compare Eras
-                </a>
-
-                <a href="/Home/About" class="hover:text-cyan-400 transition">
-                    About
-                </a>
-
-            </nav>
-
-            <!-- Right side (future cart/user area) -->
-            <div class="text-xs text-gray-400">
-                Beta Build
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Products" asp-action="Index">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="CompareEras">Compare Eras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <span class="retro-status">
+                                <span class="status-dot"></span>
+                                COLLECTION: BUILDING
+                            </span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
-        </div>
+        </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -56,8 +56,8 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="border-top retro-logo footer text-muted text-center">
+        <div class="container-footer">
             &copy; 2026 - Retrotech Emporium - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
@@ -65,5 +65,24 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        const scrollCards = document.querySelectorAll('.scroll-card');
+
+        const cardObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        } else {
+        entry.target.classList.remove('visible');
+        }
+        });
+        }, {
+        threshold: 0.2
+        });
+
+        scrollCards.forEach(card => {
+        cardObserver.observe(card);
+        });
+    </script>
 </body>
 </html>

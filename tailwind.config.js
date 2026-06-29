@@ -1,6 +1,7 @@
 export default {
   content: [
-    "./Views/**/*.cshtml",
+        "./Views/**/*.cshtml",
+        "./Areas/**/*.cshtml", 
     "./Pages/**/*.cshtml",
     "./wwwroot/**/*.html"
   ],
