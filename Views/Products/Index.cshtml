@@ -1,7 +1,44 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
-
+    Layout = "_Layout";
 
 }
+@model IEnumerable<Product>
+
+<section class="py-5">
+    <div class="container">
+        <h1 class="section-title text-center mb-5">Shop the Collection</h1>
+
+        <div class="row g-4">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4">
+                    <div class="product-preview-card h-100">
+                        <div class="product-era">@product.yearReleased</div>
+
+                        <h3>@product.productName</h3>
+
+                        <p>@product.productDescription</p>
+
+                        <p class="text-secondary">
+                            @product.Category?.Name
+                        </p>
+
+                        <span class="product-price">
+                            @product.productPrice.ToString("C")
+                        </span>
+
+                        <div class="mt-4">
+                            <a asp-controller="Products"
+                               asp-action="Details"
+                               asp-route-id="@product.productId"
+                               class="btn btn-outline-retro">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

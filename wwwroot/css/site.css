@@ -48,7 +48,7 @@ body {
 }
 
 .container-footer {
-    color: #fe04f9;
+    color: #f43f5e;
 }
 
 .hero-section {
@@ -120,8 +120,9 @@ body {
 .era-card {
     min-height: 240px;
     padding: 2rem;
-    background: rgba(15, 23, 42, 0.95);
+    background: linear-gradient(180deg, rgba(25,30,55,.95), rgba(10,15,40,.95));
     border: 1px solid rgba(34, 211, 238, 0.25);
+    border-radius: 12px;
     box-shadow: 0 0 20px rgba(34, 211, 238, 0.08);
     text-align: center;
     transition: 0.3s ease;
@@ -134,7 +135,9 @@ body {
     }
 
 .era-icon {
-    font-size: 3rem;
+    font-size: 64px;
+
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.08);
     margin-bottom: 1rem;
 }
 
@@ -157,3 +160,82 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+
+.featured-section {
+    background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+}
+
+.product-preview-card {
+    min-height: 260px;
+    padding: 2rem;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(244, 63, 94, 0.35);
+    box-shadow: 0 0 20px rgba(244, 63, 94, 0.08);
+    transition: 0.3s ease;
+}
+
+    .product-preview-card:hover {
+        transform: translateY(-6px);
+        border-color: #22d3ee;
+        box-shadow: 0 0 26px rgba(34, 211, 238, 0.25);
+    }
+
+.product-era {
+    color: #22d3ee;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.product-preview-card h3 {
+    color: #f43f5e;
+    font-weight: 800;
+}
+
+.product-preview-card p {
+    color: #cbd5e1;
+}
+
+.product-price {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #22d3ee;
+    font-weight: 900;
+    font-size: 1.25rem;
+}
+
+.product-detail-card {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.15);
+}
+
+    .product-detail-card h1 {
+        color: #f43f5e;
+        font-weight: 900;
+    }
+
+.detail-category {
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.detail-description {
+    color: #cbd5e1;
+    font-size: 1.2rem;
+}
+
+.detail-price {
+    color: #22d3ee;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.detail-stock {
+    color: #f8fafc;
+}
